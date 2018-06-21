@@ -3,7 +3,7 @@ import re
 from operator import methodcaller
 import networkx as nx
 import click
-from fileutils import FastaReader, BedWriter, sort_bed_file
+from .fileutils import FastaReader, BedWriter, sort_bed_file
 
 def run_combinations(g_runs, run_length, max_loop_length):
     g_runs = tuple(g_runs)
