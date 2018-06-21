@@ -85,7 +85,7 @@ def as_bed12(ranges_iter, ref_name,
 @click.option('--bed', '-b', required=False, default='-')
 @click.option('--g-run-length', '-g', required=False, default=3)
 @click.option('--max-loop-length', '-l', required=False, default=7)
-def g4netx_ci(fasta, bed, g_run_length, max_loop_length):
+def g4netx_cli(fasta, bed, g_run_length, max_loop_length):
     with FastaReader(fasta) as fa, BedWriter() as bed_unsorted:
         for ref_name, seq in fa.parse_fasta():
             ranges = g4netx(seq, g_run_length, max_loop_length)
@@ -98,4 +98,4 @@ def g4netx_ci(fasta, bed, g_run_length, max_loop_length):
     os.remove(bed_unsorted.fn)
 
 if __name__ == '__main__':
-    g4netx_ci()
+    g4netx_cli()
